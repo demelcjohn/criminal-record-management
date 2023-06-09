@@ -24,12 +24,8 @@ export default function HomeCitizen() {
           sx={{ width: "40%", height: "100%", bgcolor: "#000000" }}
         >
           <Grid width="100%" height="50%" item xs={12} sx={{ mb: 1 }}>
-            {/* <Image
-              src="src/pages/crm-logo.svg"
-              alt="Icon"
-              width={100}
-              height={100}
-            /> */}
+            <Image src="/crm.svg" alt="Icon" width={100} height={100} />
+            <Image src="/crmtext.svg" alt="Icon" width={100} height={100} />
           </Grid>
           <Grid
             container

@@ -10,7 +10,10 @@ export default function HomeCitizen() {
       height="100vh"
       sx={{ bgcolor: "#E5ECFF", padding: "7px", overflow: "hidden" }}
     >
-      <Box sx={{ height: "40%", width: "100%" }}></Box>
+      <Box sx={{ height: "40%", width: "100%" }}>
+        <Image src="/crm.svg" alt="Icon" width={100} height={100} />
+        <Image src="/crmtext.svg" alt="Icon" width={100} height={100} />
+      </Box>
       <Box sx={{ height: "100vh", width: "100%" }}>
         <Grid
           container
