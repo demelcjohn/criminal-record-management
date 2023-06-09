@@ -1,6 +1,7 @@
 // import Demo from "./demo";
 
 import { Box, Button, Grid, TextField, Typography } from "@mui/material";
+import Image from "next/image";
 
 export default function HomeCitizen() {
   return (
@@ -24,11 +25,11 @@ export default function HomeCitizen() {
         >
           <Grid width="100%" height="50%" item xs={12} sx={{ mb: 1 }}>
             {/* <Image
-                      src="/crm-logo.svg"
-                      alt="Icon"
-                      width={100}
-                      height={100}
-                    /> */}
+              src="src/pages/crm-logo.svg"
+              alt="Icon"
+              width={100}
+              height={100}
+            /> */}
           </Grid>
           <Grid
             container
@@ -82,7 +83,7 @@ export default function HomeCitizen() {
                 }}
               />
             </Grid>
-            <Grid sx={{ height: "80%", width: "50%" }}>
+            <Grid sx={{ height: "80%", width: "30%" }}>
               <Button
                 variant="contained"
                 sx={{ width: "100%", height: "100%" }}
