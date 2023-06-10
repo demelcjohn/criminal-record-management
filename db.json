@@ -1,0 +1,19 @@
+{
+  "cases": [
+    {
+      "id": 1,
+      "description": "Murder",
+      "status": "ongoing"
+    },
+    {
+      "id": 2,
+      "description": "Kidnap",
+      "status": "free"
+    },
+    {
+      "id": 1,
+      "description": "Weapon transportation",
+      "status": "ongoing"
+    }
+  ]
+}
