@@ -21,7 +21,7 @@ export default function HomeCitizen() {
       >
         <Stack direction="column" alignItems="center" justifyContent="center">
           <Image src="/crm.svg" alt="Icon" width={100} height={100} />
-          <Image src="/crmtext.svg" alt="Icon" width={250} height={100} />
+          <Image src="/crmtext.svg" alt="Icon" width={350} height={100} />
         </Stack>
       </Box>
 
@@ -39,6 +39,7 @@ export default function HomeCitizen() {
                 width: "100%",
                 "& .MuiInputBase-root": { border: "1px solid black" },
               }}
+              label="Username"
             />
           </Grid>
           <Grid item sx={{ height: "12%", width: "22%" }}>
@@ -47,6 +48,7 @@ export default function HomeCitizen() {
                 width: "100%",
                 "& .MuiInputBase-root": { border: "1px solid black" },
               }}
+              label="Password"
             />
           </Grid>
           <Grid item sx={{ height: "10%", width: "22%" }}>

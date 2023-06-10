@@ -64,9 +64,51 @@ export default function Citizen() {
             }}
           >
             {" "}
-            <Box
-              sx={{ width: "100%", height: "100%", bgcolor: "#E5ECFF" }}
-            ></Box>
+            <Box sx={{ width: "100%", height: "100%", bgcolor: "#E5ECFF" }}>
+              <Box
+                sx={{
+                  width: "100%",
+                  height: "15%",
+                  textAlign: "center",
+                }}
+                display="flex"
+                justifyContent="center"
+                alignItems="center"
+              >
+                <Box
+                  sx={{ width: "80%", height: "70%", bgcolor: "#8BE8D7" }}
+                  display="flex"
+                  justifyContent="center"
+                  alignItems="center"
+                  fontSize={"100%"}
+                  fontWeight={"bold"}
+                  fontFamily={"sans-serif"}
+                >
+                  STATUS
+                </Box>
+              </Box>
+              <Box
+                sx={{
+                  width: "100%",
+                  height: "85%",
+                  textAlign: "center",
+                }}
+                display="flex"
+                justifyContent="center"
+                alignItems="center"
+              >
+                {" "}
+                <Box
+                  sx={{ width: "80%", height: "90%", bgcolor: "#8BE8D7" }}
+                  display="flex"
+                  justifyContent="center"
+                  alignItems="center"
+                  fontSize={"100%"}
+                  fontWeight={"bold"}
+                  fontFamily={"sans-serif"}
+                ></Box>
+              </Box>
+            </Box>
           </Grid>
         </Grid>
       </Box>
