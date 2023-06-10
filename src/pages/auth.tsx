@@ -1,6 +1,6 @@
 // import Demo from "./demo";
 
-import { Box, Button, Grid, TextField, Typography } from "@mui/material";
+import { Box, Button, Grid, Stack, TextField, Typography } from "@mui/material";
 import Image from "next/image";
 
 export default function HomeCitizen() {
@@ -10,16 +10,21 @@ export default function HomeCitizen() {
       height="100vh"
       sx={{ bgcolor: "#E5ECFF", padding: "7px", overflow: "hidden" }}
     >
-      <Box sx={{ height: "40%", width: "100%" }}>
-        <Grid container width="100%" height="50%" item xs={12} sx={{ mb: 1 }}>
-          <Grid item sx={{ height: "50%", width: "100%" }}>
-            <Image src="/crm.svg" alt="Icon" width={100} height={100} />
-          </Grid>
-          <Grid item sx={{ height: "50%", width: "100%" }}>
-            <Image src="/crmtext.svg" alt="Icon" width={300} height={100} />
-          </Grid>
-        </Grid>
+      <Box
+        sx={{
+          height: "40%",
+          width: "100%",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "flex-end",
+        }}
+      >
+        <Stack direction="column" alignItems="center" justifyContent="center">
+          <Image src="/crm.svg" alt="Icon" width={100} height={100} />
+          <Image src="/crmtext.svg" alt="Icon" width={250} height={100} />
+        </Stack>
       </Box>
+
       <Box sx={{ height: "100vh", width: "100%" }}>
         <Grid
           container
