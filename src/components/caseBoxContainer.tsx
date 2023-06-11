@@ -23,7 +23,13 @@ export default function CaseBoxContainer() {
       fontFamily={"sans-serif"}
       overflow={"scroll"}
     >
-      <CaseBox />
+      {data.map((cases: any) => (
+        <CaseBox
+          id={cases.id}
+          description={cases.description}
+          status={cases.status}
+        />
+      ))}
     </Box>
   );
 }
