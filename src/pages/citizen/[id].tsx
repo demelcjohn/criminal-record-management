@@ -10,12 +10,6 @@ import { QueryClient, QueryClientProvider } from "react-query";
 const queryClient = new QueryClient();
 
 export default function Citizen() {
-  const [name, setName] = useState("John Doe");
-  const [identityNumber, setIdentityNumber] = useState("1234567890");
-  const [address, setAddress] = useState("123 Main Street");
-  const [phoneNumber, setPhoneNumber] = useState("123-456-7890");
-  const [dob, setDob] = useState("1990-01-01");
-
   return (
     <QueryClientProvider client={queryClient}>
       <Box

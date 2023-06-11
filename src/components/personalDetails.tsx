@@ -2,7 +2,10 @@
 
 import { Box, Button, Grid, TextField, Typography } from "@mui/material";
 import Image from "next/image";
-export default function PersonalDetails({ id, description, status }: any) {
+import { useState } from "react";
+export default function PersonalDetails() {
+  const [name, setName] = useState("John Doe");
+  const [identityNumber, setIdentityNumber] = useState("1234567890");
   return (
     <Box
       width="100%"
@@ -43,12 +46,12 @@ export default function PersonalDetails({ id, description, status }: any) {
               }}
             >
               <Typography>Name:</Typography>
-              <Typography>{"Demel C John"}</Typography>
+              <Typography>{name}</Typography>
             </div>
 
             <div style={{ display: "flex", alignItems: "left" }}>
               <Typography>Identity Number:</Typography>
-              <Typography>{"636783"}</Typography>
+              <Typography>{identityNumber}</Typography>
             </div>
           </Grid>
         </Grid>
