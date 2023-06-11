@@ -1,9 +1,12 @@
 // import Demo from "./demo";
 
+import CaseBoxContainer from "@/components/caseBoxContainer";
 import CaseBox from "@/components/casebox";
 import { Box, Button, Grid, TextField, Typography } from "@mui/material";
 import Image from "next/image";
 import React, { useState } from "react";
+import { QueryClient, QueryClientProvider } from "react-query";
+const queryClient = new QueryClient();
 
 export default function Citizen() {
   const [name, setName] = useState("John Doe");
@@ -13,105 +16,99 @@ export default function Citizen() {
   const [dob, setDob] = useState("1990-01-01");
 
   return (
-    <Box
-      width="100%"
-      height="100vh"
-      sx={{ bgcolor: "#E5ECFF", padding: "7px", overflow: "hidden" }}
-    >
-      <Box sx={{ width: "100%", height: "8%" }}>
-        <Grid container width="100%" height="50%" item xs={12} sx={{ mb: 1 }}>
-          <Grid item sx={{ height: "50%" }}>
-            <Image src="/crm.svg" alt="Icon" width={70} height={70} />
+    <QueryClientProvider client={queryClient}>
+      <Box
+        width="100%"
+        height="100vh"
+        sx={{ bgcolor: "#E5ECFF", padding: "7px", overflow: "hidden" }}
+      >
+        <Box sx={{ width: "100%", height: "8%" }}>
+          <Grid container width="100%" height="50%" item xs={12} sx={{ mb: 1 }}>
+            <Grid item sx={{ height: "50%" }}>
+              <Image src="/crm.svg" alt="Icon" width={70} height={70} />
+            </Grid>
+            <Grid item sx={{ height: "50%" }}>
+              <Image src="/crmtext.svg" alt="Icon" width={300} height={100} />
+            </Grid>
           </Grid>
-          <Grid item sx={{ height: "50%" }}>
-            <Image src="/crmtext.svg" alt="Icon" width={300} height={100} />
-          </Grid>
-        </Grid>
-      </Box>
-      <Box sx={{ width: "100%", height: "92%", padding: "7px" }}>
-        <Grid
-          container
-          sx={{
-            width: "100%",
-            height: "100%",
-            bgcolor: "#ABC8EA",
-            padding: "7px",
-          }}
-        >
+        </Box>
+        <Box sx={{ width: "100%", height: "92%", padding: "7px" }}>
           <Grid
-            item
+            container
             sx={{
-              width: "50%",
+              width: "100%",
               height: "100%",
               bgcolor: "#ABC8EA",
-              padding: "5px",
+              padding: "7px",
             }}
           >
-            <Box
+            <Grid
+              item
               sx={{
-                width: "100%",
+                width: "50%",
                 height: "100%",
-                bgcolor: "#E5ECFF",
+                bgcolor: "#ABC8EA",
+                padding: "5px",
               }}
-            ></Box>
-          </Grid>
-          <Grid
-            item
-            sx={{
-              width: "50%",
-              height: "100%",
-              bgcolor: "#ABC8EA",
-              padding: "5px",
-            }}
-          >
-            {" "}
-            <Box sx={{ width: "100%", height: "100%", bgcolor: "#E5ECFF" }}>
+            >
               <Box
                 sx={{
                   width: "100%",
-                  height: "15%",
-                  textAlign: "center",
+                  height: "100%",
+                  bgcolor: "#E5ECFF",
                 }}
-                display="flex"
-                justifyContent="center"
-                alignItems="center"
-              >
+              ></Box>
+            </Grid>
+            <Grid
+              item
+              sx={{
+                width: "50%",
+                height: "100%",
+                bgcolor: "#ABC8EA",
+                padding: "5px",
+              }}
+            >
+              {" "}
+              <Box sx={{ width: "100%", height: "100%", bgcolor: "#E5ECFF" }}>
                 <Box
-                  sx={{ width: "80%", height: "70%", bgcolor: "#8BE8D7" }}
+                  sx={{
+                    width: "100%",
+                    height: "15%",
+                    textAlign: "center",
+                  }}
                   display="flex"
                   justifyContent="center"
                   alignItems="center"
-                  fontSize={"100%"}
-                  fontWeight={"bold"}
-                  fontFamily={"sans-serif"}
                 >
-                  STATUS
+                  <Box
+                    sx={{ width: "80%", height: "70%", bgcolor: "#8BE8D7" }}
+                    display="flex"
+                    justifyContent="center"
+                    alignItems="center"
+                    fontSize={"100%"}
+                    fontWeight={"bold"}
+                    fontFamily={"sans-serif"}
+                  >
+                    STATUS
+                  </Box>
                 </Box>
-              </Box>
-              <Box
-                sx={{
-                  width: "100%",
-                  height: "85%",
-                  textAlign: "center",
-                }}
-                display="flex"
-                justifyContent="center"
-                alignItems="center"
-              >
                 <Box
-                  sx={{ width: "80%", height: "90%", bgcolor: "#8BE8D7" }}
-                  fontSize={"100%"}
-                  fontWeight={"bold"}
-                  fontFamily={"sans-serif"}
-                  overflow={"scroll"}
+                  sx={{
+                    width: "100%",
+                    height: "85%",
+                    textAlign: "center",
+                  }}
+                  display="flex"
+                  justifyContent="center"
+                  alignItems="center"
                 >
-                  <CaseBox />
+                  <CaseBoxContainer />
                 </Box>
               </Box>
-            </Box>
+            </Grid>
           </Grid>
-        </Grid>
+        </Box>
       </Box>
-    </Box>
+    </QueryClientProvider>
   );
 }
