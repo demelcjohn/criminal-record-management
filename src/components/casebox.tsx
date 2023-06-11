@@ -1,6 +1,6 @@
 // import Demo from "./demo";
 
-import { Box } from "@mui/material";
+import { Box, Button } from "@mui/material";
 import { useEffect, useState } from "react";
 export default function CaseBox({ id, description, status }: any) {
   const [color, setColor] = useState("blue");
@@ -22,10 +22,20 @@ export default function CaseBox({ id, description, status }: any) {
       <Box
         sx={{ bgcolor: color, width: "100%", height: "100%" }}
         display="flex"
-        justifyContent="left"
+        justifyContent="center"
         alignItems="center"
       >
-        {id} {description}
+        <Box
+          sx={{ bgcolor: color, width: "95%", height: "100%" }}
+          display="flex"
+          justifyContent="space-between"
+          alignItems="center"
+        >
+          {id} {description}
+          <Button variant="contained" size="small">
+            Status
+          </Button>
+        </Box>
       </Box>
     </Box>
   );
