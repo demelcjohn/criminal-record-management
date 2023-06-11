@@ -48,6 +48,7 @@ export default function Citizen() {
               sx={{
                 width: "100%",
                 height: "20%",
+                bgcolor: "#FFF387",
               }}
             >
               <div
@@ -82,21 +83,21 @@ export default function Citizen() {
                 >
                   Add Case
                 </Button>
-                <Button
-                  variant="contained"
-                  color="secondary"
-                  sx={{ width: "100%" }}
-                  style={{ marginTop: "10%" }}
-                >
-                  View Case
-                </Button>
                 <TextField
                   sx={{ width: "100%", bgcolor: "white" }}
-                  style={{ marginTop: "2%" }}
+                  style={{ marginTop: "10%" }}
                   label="Case Number"
                 >
                   View Case
                 </TextField>
+                <Button
+                  variant="contained"
+                  color="secondary"
+                  sx={{ width: "100%" }}
+                  style={{ marginTop: "2%" }}
+                >
+                  View Case
+                </Button>
               </Grid>
               <Grid
                 item
