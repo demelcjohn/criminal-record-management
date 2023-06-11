@@ -6,7 +6,7 @@ import React, { useState } from "react";
 import { QueryClient, QueryClientProvider } from "react-query";
 const queryClient = new QueryClient();
 
-export default function Citizen() {
+export default function Authority() {
   return (
     <QueryClientProvider client={queryClient}>
       <Box
