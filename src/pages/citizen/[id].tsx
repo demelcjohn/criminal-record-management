@@ -1,5 +1,6 @@
 // import Demo from "./demo";
 
+import CaseBox from "@/components/casebox";
 import { Box, Button, Grid, TextField, Typography } from "@mui/material";
 import Image from "next/image";
 import React, { useState } from "react";
@@ -97,16 +98,15 @@ export default function Citizen() {
                 justifyContent="center"
                 alignItems="center"
               >
-                {" "}
                 <Box
                   sx={{ width: "80%", height: "90%", bgcolor: "#8BE8D7" }}
-                  display="flex"
-                  justifyContent="center"
-                  alignItems="center"
                   fontSize={"100%"}
                   fontWeight={"bold"}
                   fontFamily={"sans-serif"}
-                ></Box>
+                  overflow={"scroll"}
+                >
+                  <CaseBox />
+                </Box>
               </Box>
             </Box>
           </Grid>
