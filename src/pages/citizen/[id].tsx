@@ -2,6 +2,7 @@
 
 import CaseBoxContainer from "@/components/caseBoxContainer";
 import CaseBox from "@/components/casebox";
+import PersonalDetails from "@/components/personalDetails";
 import { Box, Button, Grid, TextField, Typography } from "@mui/material";
 import Image from "next/image";
 import React, { useState } from "react";
@@ -57,7 +58,9 @@ export default function Citizen() {
                   height: "100%",
                   bgcolor: "#E5ECFF",
                 }}
-              ></Box>
+              >
+                <PersonalDetails />
+              </Box>
             </Grid>
             <Grid
               item

@@ -32,7 +32,7 @@ export default function CaseBox({ id, description, status }: any) {
           alignItems="center"
         >
           {id} {description}
-          <Button variant="contained" size="small">
+          <Button variant="contained" size="small" color="info">
             Status
           </Button>
         </Box>
