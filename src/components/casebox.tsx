@@ -1,7 +1,6 @@
 // import Demo from "./demo";
 
 import { Box } from "@mui/material";
-
 export default function CaseBox() {
   return (
     <Box
