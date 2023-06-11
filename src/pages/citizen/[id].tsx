@@ -1,7 +1,4 @@
-// import Demo from "./demo";
-
 import CaseBoxContainer from "@/components/caseBoxContainer";
-import CaseBox from "@/components/casebox";
 import PersonalDetails from "@/components/personalDetails";
 import { Box, Button, Grid, TextField, Typography } from "@mui/material";
 import Image from "next/image";
