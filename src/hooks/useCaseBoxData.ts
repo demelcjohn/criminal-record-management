@@ -9,7 +9,9 @@ const fetchCases = async () => {
 export const useCaseBoxData = (onSuccess: any, onError: any) => {
   return useQuery("cases", fetchCases, {
     onSuccess,
-    onError,
+    onError: (error) => {
+      console.error("Error fetching data:", error);
+    },
     select: (data) => {
       const caseDetails = data.map((individualCase: any) => individualCase);
       return caseDetails;
