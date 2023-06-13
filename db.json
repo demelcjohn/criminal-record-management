@@ -15,5 +15,34 @@
       "description": "Weapon transportation",
       "status": "ongoing"
     }
+  ],
+  "users": [
+    {
+      "id": "345678",
+      "UID": "1",
+      "name": "abc",
+      "password": "abc",
+      "address": "qwerty",
+      "phone": "3546789",
+      "email": "tfvghj@gmail.com"
+    },
+    {
+      "id": "345679",
+      "UID": "2",
+      "name": "def",
+      "password": "abc",
+      "address": "asdfg",
+      "phone": "5456",
+      "email": "efcvgh@gmail.com"
+    },
+    {
+      "id": "345680",
+      "UID": "3",
+      "name": "ghi",
+      "password": "abc",
+      "address": "zxcvb",
+      "phone": "56765",
+      "email": "ghnfg@gmail.com"
+    }
   ]
 }
