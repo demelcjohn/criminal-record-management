@@ -96,7 +96,15 @@ export default function Citizen() {
                   justifyContent="center"
                   alignItems="center"
                 >
-                  <CaseBoxContainer />
+                  <Box
+                    sx={{ width: "80%", height: "90%", bgcolor: "#8BE8D7" }}
+                    fontSize={"100%"}
+                    fontWeight={"bold"}
+                    fontFamily={"sans-serif"}
+                    overflow={"scroll"}
+                  >
+                    <CaseBoxContainer />
+                  </Box>
                 </Box>
               </Box>
             </Grid>
