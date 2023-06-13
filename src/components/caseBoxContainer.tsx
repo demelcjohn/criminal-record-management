@@ -16,7 +16,13 @@ export default function CaseBoxContainer() {
     return <h2>Loading...</h2>;
   }
   return (
-    <div>
+    <Box
+      sx={{ width: "80%", height: "90%", bgcolor: "#8BE8D7" }}
+      fontSize={"100%"}
+      fontWeight={"bold"}
+      fontFamily={"sans-serif"}
+      overflow={"scroll"}
+    >
       {data &&
         data.map((cases: any) => (
           <CaseBox
@@ -25,6 +31,6 @@ export default function CaseBoxContainer() {
             status={cases.status}
           />
         ))}
-    </div>
+    </Box>
   );
 }
