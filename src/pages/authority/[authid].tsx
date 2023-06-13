@@ -86,7 +86,11 @@ export default function Authority() {
                 >
                   Add Case
                 </Button>
-                <AddCaseModal open={openModal} setOpen={setOpenModal} />
+                <AddCaseModal
+                  open={openModal}
+                  setOpen={setOpenModal}
+                  handleClose={handleClose}
+                />
                 <TextField
                   sx={{ width: "100%", bgcolor: "white" }}
                   style={{ marginTop: "10%" }}

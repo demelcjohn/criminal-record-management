@@ -1,4 +1,4 @@
-import { Box, Modal, Typography } from "@mui/material";
+import { Box, Button, Modal, Typography } from "@mui/material";
 
 const style = {
   position: "absolute" as "absolute",
@@ -13,21 +13,21 @@ const style = {
   p: 4,
 };
 
-export default function AddCaseModal({ open, setOpen }: any) {
+export default function AddCaseModal({ open, setOpen, handleClose }: any) {
   return (
     <Modal
       open={open}
-      // onClose={handleClose}
+      onClose={handleClose}
       aria-labelledby="modal-modal-title"
       aria-describedby="modal-modal-description"
     >
       <Box sx={style}>
-        <Typography id="modal-modal-title" variant="h6" component="h2">
-          Text in a modal
-        </Typography>
-        <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-          Text
-        </Typography>
+        <Box sx={{ height: "90%", width: "100%" }}></Box>
+        <Box sx={{ height: "10%", width: "100%" }}>
+          <Button variant="outlined" color="error" onClick={handleClose}>
+            Cancel
+          </Button>
+        </Box>
       </Box>
     </Modal>
   );
