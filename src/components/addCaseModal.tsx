@@ -1,4 +1,5 @@
-import { Box, Button, Modal, Typography } from "@mui/material";
+import { Box, Button, Modal, TextField, Typography } from "@mui/material";
+import { useState } from "react";
 
 const style = {
   position: "absolute" as "absolute",
@@ -14,6 +15,24 @@ const style = {
 };
 
 export default function AddCaseModal({ open, setOpen, handleClose }: any) {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleChange = (event: any) => {
+    const { name, value } = event.target;
+    setFormData((prevData: any) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (event: any) => {
+    event.preventDefault();
+    console.log(formData); // You can perform further actions with the form data here
+  };
   return (
     <Modal
       open={open}
@@ -22,7 +41,40 @@ export default function AddCaseModal({ open, setOpen, handleClose }: any) {
       aria-describedby="modal-modal-description"
     >
       <Box sx={style}>
-        <Box sx={{ height: "90%", width: "100%" }}></Box>
+        <Box sx={{ height: "90%", width: "100%" }}>
+          {" "}
+          <form onSubmit={handleSubmit}>
+            <TextField
+              name="name"
+              label="Name"
+              value={formData.name}
+              onChange={handleChange}
+              fullWidth
+              required
+            />
+            <TextField
+              name="email"
+              label="Email"
+              value={formData.email}
+              onChange={handleChange}
+              fullWidth
+              required
+            />
+            <TextField
+              name="message"
+              label="Message"
+              value={formData.message}
+              onChange={handleChange}
+              multiline
+              rows={4}
+              fullWidth
+              required
+            />
+            <Button type="submit" variant="contained" color="primary">
+              Submit
+            </Button>
+          </form>
+        </Box>
         <Box sx={{ height: "10%", width: "100%" }}>
           <Button variant="outlined" color="error" onClick={handleClose}>
             Cancel
