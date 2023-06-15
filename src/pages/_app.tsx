@@ -8,12 +8,23 @@ function MyApp({ Component, pageProps }: AppProps) {
     <>
       <style jsx global>
         {`
+          html,
+          body,
+          #__next {
+            height: 100%;
+          }
+
+          * {
+            box-sizing: border-box;
+          }
+
           body {
             margin: 0;
             padding: 0;
           }
         `}
       </style>
+
       <Component {...pageProps} />
     </>
   );
