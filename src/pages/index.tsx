@@ -10,7 +10,7 @@ export default function Home() {
     <StrictMode>
       <StyledEngineProvider injectFirst>
         <Box
-          width="100%"
+          width="100vw"
           height="100vh"
           sx={{ bgcolor: "#E5ECFF", padding: "7px" }}
         >
