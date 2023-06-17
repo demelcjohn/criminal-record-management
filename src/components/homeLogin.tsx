@@ -3,15 +3,19 @@ import Image from "next/image";
 import { useState } from "react";
 
 export default function HomeLogin() {
-  const [user, setUser] = useState({ UID: "", password: "" });
+  //   const [user, setUser] = useState({ UID: "", password: "" });
+
+  //   const changeHandler = (e: any) => {
+  //     setUser(e.target.value);
+  //   };
 
   const [UID, setUID] = useState("");
   const [Password, setPassword] = useState("");
 
-  const UIDChngeHsndler = (e: any) => {
+  const UIDChangeHandler = (e: any) => {
     setUID(e.target.value);
   };
-  const PasswordChsngeHandler = (e: any) => {
+  const PasswordChangeHandler = (e: any) => {
     setPassword(e.target.value);
   };
 
@@ -51,7 +55,7 @@ export default function HomeLogin() {
                 width: "100%",
               },
             }}
-            onChange={}
+            onChange={UIDChangeHandler}
           />
         </Grid>
         <Grid
@@ -77,6 +81,7 @@ export default function HomeLogin() {
                 width: "100%",
               },
             }}
+            onChange={PasswordChangeHandler}
           />
         </Grid>
         <Grid sx={{ height: "80%", width: "30%" }}>
