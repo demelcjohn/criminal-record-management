@@ -1,4 +1,5 @@
 import { Box, Button, Grid, Stack, TextField, Typography } from "@mui/material";
+import axios from "axios";
 import Image from "next/image";
 import { useState } from "react";
 
@@ -11,6 +12,25 @@ export default function HomeCitizen() {
   };
   const changePassword = (e: any) => {
     setPassword(e.target.value);
+  };
+
+  const submitHandler = async (event: any) => {
+    event.preventDefault();
+    const formData = {
+      username: username,
+      password: password,
+    };
+
+    try {
+      const response = await axios.post(
+        "https://crm-back-end-jiaa-git-main-jjesvin21.vercel.app/api/authority/login",
+        formData
+      );
+      console.log(response.data);
+      localStorage.setItem("token", JSON.stringify(response.data));
+    } catch (error) {
+      console.error("Error");
+    }
   };
 
   return (
@@ -64,7 +84,11 @@ export default function HomeCitizen() {
             />
           </Grid>
           <Grid item sx={{ height: "10%", width: "22%" }}>
-            <Button variant="contained" sx={{ width: "100%" }}>
+            <Button
+              variant="contained"
+              sx={{ width: "100%" }}
+              onClick={submitHandler}
+            >
               LOGIN
             </Button>
           </Grid>
