@@ -46,7 +46,7 @@ export default function HomeCitizen() {
             <TextField
               sx={{
                 width: "100%",
-                "& .MuiInputBase-root": { border: "1px solid black" },
+                // "& .MuiInputBase-root": { border: "1px solid black" },
               }}
               label="Username"
               onChange={changeUsername}
@@ -56,7 +56,7 @@ export default function HomeCitizen() {
             <TextField
               sx={{
                 width: "100%",
-                "& .MuiInputBase-root": { border: "1px solid black" },
+                // "& .MuiInputBase-root": { border: "1px solid black" },
               }}
               label="Password"
               onChange={changePassword}
