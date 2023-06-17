@@ -1,4 +1,4 @@
-import { Box, Button, Grid, Stack, TextField, Typography } from "@mui/material";
+import { Box, Button, Grid, Stack, TextField } from "@mui/material";
 import axios from "axios";
 import Image from "next/image";
 import { useRouter } from "next/router";
@@ -34,6 +34,7 @@ export default function AuthorityLogin() {
       router.push("authority/details");
     } catch (error) {
       console.error("Error");
+      alert("Username or Password does not match !!!!");
     }
   };
 
