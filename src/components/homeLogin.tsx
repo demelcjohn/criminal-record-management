@@ -1,7 +1,20 @@
 import { Button, Grid, Stack, TextField, Typography } from "@mui/material";
 import Image from "next/image";
+import { useState } from "react";
 
 export default function HomeLogin() {
+  const [user, setUser] = useState({ UID: "", password: "" });
+
+  const [UID, setUID] = useState("");
+  const [Password, setPassword] = useState("");
+
+  const UIDChngeHsndler = (e: any) => {
+    setUID(e.target.value);
+  };
+  const PasswordChsngeHandler = (e: any) => {
+    setPassword(e.target.value);
+  };
+
   return (
     <Grid
       item
@@ -38,6 +51,7 @@ export default function HomeLogin() {
                 width: "100%",
               },
             }}
+            onChange={}
           />
         </Grid>
         <Grid
