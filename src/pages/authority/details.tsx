@@ -6,9 +6,16 @@ import { QueryClient, QueryClientProvider } from "react-query";
 const queryClient = new QueryClient();
 
 export default function Authority() {
+  const [viewId, setViewId] = useState("");
   const [openModal, setOpenModal] = useState(false);
   const handleOpen = () => setOpenModal(true);
   const handleClose = () => setOpenModal(false);
+  const handleChange = (e: any) => {
+    setViewId(e.target.value);
+  };
+  const handleViewCase = (e: any) => {
+    setOpenModal(true);
+  };
   return (
     <QueryClientProvider client={queryClient}>
       <Box
@@ -95,14 +102,14 @@ export default function Authority() {
                   sx={{ width: "100%", bgcolor: "white" }}
                   style={{ marginTop: "10%" }}
                   label="Case Number"
-                >
-                  View Case
-                </TextField>
+                  onChange={handleChange}
+                />
                 <Button
                   variant="contained"
                   color="secondary"
                   sx={{ width: "100%" }}
                   style={{ marginTop: "2%" }}
+                  onClick={handleViewCase}
                 >
                   View Case
                 </Button>
