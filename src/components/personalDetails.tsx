@@ -8,25 +8,25 @@ export default function PersonalDetails() {
   const [name, setName] = useState("John Doe");
   const [identityNumber, setIdentityNumber] = useState("1234567890");
 
-  const onSuccess = (data: any) => {
-    console.log("Perform fetching", data);
-  };
-  const onError = (error: any) => {
-    console.log("Perform error", error);
-  };
+  // const onSuccess = (data: any) => {
+  //   console.log("Perform fetching", data);
+  // };
+  // const onError = (error: any) => {
+  //   console.log("Perform error", error);
+  // };
 
-  const { isLoading, data, isError, error, isFetching, refetch } =
-    usePersonalData(onSuccess, onError);
+  // const { isLoading, data, isError, error, isFetching, refetch } =
+  //   usePersonalData(onSuccess, onError);
 
-  useEffect(() => {
-    console.log("Hello personal data");
-    setName(data?.name);
-    setIdentityNumber(data?.id);
-  }, [data]);
+  // useEffect(() => {
+  //   console.log("Hello personal data");
+  //   setName(data?.name);
+  //   setIdentityNumber(data?.id);
+  // }, [data]);
 
-  if (isLoading || isFetching) {
-    return <h2>Loading...</h2>;
-  }
+  // if (isLoading || isFetching) {
+  //   return <h2>Loading...</h2>;
+  // }
   return (
     <Box
       width="100%"
