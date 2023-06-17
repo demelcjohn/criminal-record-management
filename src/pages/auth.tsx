@@ -1,9 +1,18 @@
-// import Demo from "./demo";
-
 import { Box, Button, Grid, Stack, TextField, Typography } from "@mui/material";
 import Image from "next/image";
+import { useState } from "react";
 
 export default function HomeCitizen() {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
+  const changeUsername = (e: any) => {
+    setUsername(e.target.value);
+  };
+  const changePassword = (e: any) => {
+    setPassword(e.target.value);
+  };
+
   return (
     <Box
       width="100%"
@@ -40,6 +49,7 @@ export default function HomeCitizen() {
                 "& .MuiInputBase-root": { border: "1px solid black" },
               }}
               label="Username"
+              onChange={changeUsername}
             />
           </Grid>
           <Grid item sx={{ height: "12%", width: "22%" }}>
@@ -49,6 +59,8 @@ export default function HomeCitizen() {
                 "& .MuiInputBase-root": { border: "1px solid black" },
               }}
               label="Password"
+              onChange={changePassword}
+              type="password"
             />
           </Grid>
           <Grid item sx={{ height: "10%", width: "22%" }}>
