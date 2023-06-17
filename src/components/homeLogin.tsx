@@ -3,12 +3,6 @@ import Image from "next/image";
 import { useState } from "react";
 
 export default function HomeLogin() {
-  //   const [user, setUser] = useState({ UID: "", password: "" });
-
-  //   const changeHandler = (e: any) => {
-  //     setUser(e.target.value);
-  //   };
-
   const [UID, setUID] = useState("");
   const [Password, setPassword] = useState("");
 
