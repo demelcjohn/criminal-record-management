@@ -16,9 +16,12 @@ const style = {
 
 export default function AddCaseModal({ open, setOpen, handleClose }: any) {
   const [formData, setFormData] = useState({
+    UID: "",
     name: "",
+    address: "",
+    phone: "",
     email: "",
-    message: "",
+    password: "",
   });
 
   const handleChange = (event: any) => {
@@ -31,7 +34,7 @@ export default function AddCaseModal({ open, setOpen, handleClose }: any) {
 
   const handleSubmit = (event: any) => {
     event.preventDefault();
-    console.log(formData); // You can perform further actions with the form data here
+    console.log(formData);
   };
   return (
     <Modal
@@ -46,7 +49,7 @@ export default function AddCaseModal({ open, setOpen, handleClose }: any) {
             <TextField
               name="UID"
               label="UID"
-              value={formData.name}
+              value={formData.UID}
               onChange={handleChange}
               required
               sx={{ width: "25%" }}
@@ -65,7 +68,7 @@ export default function AddCaseModal({ open, setOpen, handleClose }: any) {
             <TextField
               name="phone"
               label="Phone"
-              value={formData.email}
+              value={formData.phone}
               onChange={handleChange}
               sx={{ width: "25%" }}
             />
@@ -79,7 +82,7 @@ export default function AddCaseModal({ open, setOpen, handleClose }: any) {
             <TextField
               name="password"
               label="Password"
-              value={formData.message}
+              value={formData.password}
               onChange={handleChange}
               rows={4}
               required
@@ -91,7 +94,7 @@ export default function AddCaseModal({ open, setOpen, handleClose }: any) {
             <TextField
               name="address"
               label="Address"
-              value={formData.message}
+              value={formData.address}
               onChange={handleChange}
               multiline
               rows={4}
@@ -99,7 +102,12 @@ export default function AddCaseModal({ open, setOpen, handleClose }: any) {
             />
           </Grid>
           <Grid display={"flex"} justifyContent={"space-between"}>
-            <Button type="submit" variant="contained" color="primary">
+            <Button
+              type="submit"
+              variant="contained"
+              color="primary"
+              onClick={handleSubmit}
+            >
               Submit
             </Button>
 
