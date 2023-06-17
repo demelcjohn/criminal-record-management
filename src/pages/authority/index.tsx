@@ -1,9 +1,12 @@
 import { Box, Button, Grid, Stack, TextField, Typography } from "@mui/material";
 import axios from "axios";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import { useState } from "react";
 
-export default function HomeCitizen() {
+export default function AuthorityLogin() {
+  const router = useRouter();
+
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -22,12 +25,13 @@ export default function HomeCitizen() {
     };
 
     try {
-      const response = await axios.post(
+      const response: any = await axios.post(
         "https://crm-back-end-jiaa-git-main-jjesvin21.vercel.app/api/authority/login",
         formData
       );
       console.log(response.data);
       localStorage.setItem("token", JSON.stringify(response.data));
+      router.push("authority/details");
     } catch (error) {
       console.error("Error");
     }
