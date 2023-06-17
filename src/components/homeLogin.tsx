@@ -1,8 +1,11 @@
 import { Button, Grid, Stack, TextField, Typography } from "@mui/material";
+import axios from "axios";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import { useState } from "react";
 
 export default function HomeLogin() {
+  const router = useRouter();
   const [UID, setUID] = useState("");
   const [Password, setPassword] = useState("");
 
@@ -11,6 +14,27 @@ export default function HomeLogin() {
   };
   const PasswordChangeHandler = (e: any) => {
     setPassword(e.target.value);
+  };
+
+  const submitHandler = async (event: any) => {
+    event.preventDefault();
+    const formData = {
+      UID: UID,
+      password: Password,
+    };
+
+    try {
+      const response: any = await axios.post(
+        "https://crm-back-end-jiaa-git-main-jjesvin21.vercel.app/api/citizen/login",
+        formData
+      );
+      console.log(response.data);
+      localStorage.setItem("token", JSON.stringify(response.data));
+      router.push("/citizen");
+    } catch (error) {
+      console.error("Error");
+      alert("Username or Password does not match !!!!");
+    }
   };
 
   return (
@@ -79,7 +103,11 @@ export default function HomeLogin() {
           />
         </Grid>
         <Grid sx={{ height: "80%", width: "30%" }}>
-          <Button variant="contained" sx={{ width: "100%", height: "100%" }}>
+          <Button
+            variant="contained"
+            sx={{ width: "100%", height: "100%" }}
+            onClick={submitHandler}
+          >
             Submit
           </Button>
         </Grid>
