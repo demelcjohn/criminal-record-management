@@ -16,12 +16,11 @@ const style = {
 
 export default function AddCaseModal({ open, setOpen, handleClose }: any) {
   const [formData, setFormData] = useState({
-    UID: "",
-    name: "",
-    address: "",
-    phone: "",
-    email: "",
-    password: "",
+    caseid: "",
+    casetitle: "",
+    casediscription: "",
+    status: "",
+    case_user: "",
   });
 
   const handleChange = (event: any) => {
@@ -47,58 +46,50 @@ export default function AddCaseModal({ open, setOpen, handleClose }: any) {
         <Box sx={{ height: "90%", width: "100%" }}>
           <Grid sx={{ display: "flex", gap: "10%" }} marginBottom={"2%"}>
             <TextField
-              name="UID"
-              label="UID"
-              value={formData.UID}
+              name="caseid"
+              label="Case Id"
+              value={formData.caseid}
               onChange={handleChange}
               required
               sx={{ width: "25%" }}
             />
             <TextField
-              name="name"
-              label="Name"
-              value={formData.name}
+              name="casetitle"
+              label="Case Title"
+              value={formData.casetitle}
               onChange={handleChange}
               required
               sx={{ width: "25%" }}
             />
-          </Grid>
 
+            <TextField
+              name="status"
+              label="Status"
+              value={formData.status}
+              onChange={handleChange}
+              sx={{ width: "25%" }}
+            />
+          </Grid>
           <Grid sx={{ display: "flex", gap: "10%" }} marginBottom={"2%"}>
             <TextField
-              name="phone"
-              label="Phone"
-              value={formData.phone}
-              onChange={handleChange}
-              sx={{ width: "25%" }}
-            />
-            <TextField
-              name="email"
-              label="Email"
-              value={formData.email}
-              onChange={handleChange}
-              sx={{ width: "25%" }}
-            />
-            <TextField
-              name="password"
-              label="Password"
-              value={formData.password}
-              onChange={handleChange}
-              rows={4}
-              required
-              type={"password"}
-              sx={{ width: "25%" }}
-            />
-          </Grid>
-          <Grid sx={{ display: "flex", gap: "10%" }} marginBottom={"6%"}>
-            <TextField
-              name="address"
-              label="Address"
-              value={formData.address}
+              name="casediscription"
+              label="Case Description"
+              value={formData.casediscription}
               onChange={handleChange}
               multiline
               rows={4}
-              sx={{ width: "40%" }}
+              sx={{ width: "70%" }}
+            />
+          </Grid>
+          <Grid sx={{ display: "flex", gap: "10%" }} marginBottom={"4%"}>
+            <TextField
+              name="case_user"
+              label="Citizens involved"
+              value={formData.case_user}
+              onChange={handleChange}
+              multiline
+              rows={4}
+              sx={{ width: "70%" }}
             />
           </Grid>
           <Grid display={"flex"} justifyContent={"space-between"}>
