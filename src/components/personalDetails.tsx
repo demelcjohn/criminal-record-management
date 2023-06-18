@@ -6,10 +6,18 @@ import axios from "axios";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 export default function PersonalDetails() {
-  const [name, setName] = useState("John Doe");
-  const [identityNumber, setIdentityNumber] = useState("1234567890");
-
-  const [userData, setUserData] = useState();
+  const [userData, setUserData] = useState({
+    _id: "",
+    UID: 0,
+    name: "",
+    password: "",
+    address: "",
+    phNo: 0,
+    email: "",
+    user_Role: "Citizen",
+    myCases: [],
+    __v: 0,
+  });
 
   // const onSuccess = (data: any) => {
   //   console.log("Perform fetching", data);
@@ -42,16 +50,15 @@ export default function PersonalDetails() {
           headers: {
             tocken: parsedData.tocken,
             user: parsedData.user,
-            role: "Citizen",
+            role: "citizen",
           },
         }
       );
-      console.log(response);
-      console.log(response.data);
+      setUserData(response.data.data);
+      console.log(response.data.data);
       localStorage.setItem("token", JSON.stringify(response.data));
     } catch (error) {
       console.error("Error");
-      alert("Username or Password does not match !!!!");
     }
   };
 
@@ -99,12 +106,12 @@ export default function PersonalDetails() {
               }}
             >
               <Typography>Name:</Typography>
-              <Typography>{name}</Typography>
+              <Typography>{userData.name}</Typography>
             </div>
 
             <div style={{ display: "flex", alignItems: "left" }}>
               <Typography>Identity Number:</Typography>
-              <Typography>{identityNumber}</Typography>
+              <Typography>{userData.UID}</Typography>
             </div>
           </Grid>
         </Grid>
