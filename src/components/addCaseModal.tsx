@@ -20,8 +20,10 @@ export default function AddCaseModal({ open, setOpen, handleClose }: any) {
     casetitle: "",
     casediscription: "",
     status: "",
-    case_user: "",
+    case_user: [] as string[],
   });
+
+  const [caseUserString, setCaseUserString] = useState<string>("");
 
   const handleChange = (event: any) => {
     const { name, value } = event.target;
@@ -31,8 +33,19 @@ export default function AddCaseModal({ open, setOpen, handleClose }: any) {
     }));
   };
 
+  const handleCaseUserString = (e: any) => {
+    setCaseUserString(e.target.value);
+  };
+
+  const convertArray = (stringData: string) => {
+    const arr = stringData.split(/\s+/);
+    console.log("arr", arr);
+    return arr;
+  };
+
   const handleSubmit = (event: any) => {
     event.preventDefault();
+    formData.case_user = convertArray(caseUserString);
     console.log(formData);
   };
   return (
@@ -85,8 +98,8 @@ export default function AddCaseModal({ open, setOpen, handleClose }: any) {
             <TextField
               name="case_user"
               label="Citizens involved"
-              value={formData.case_user}
-              onChange={handleChange}
+              value={caseUserString}
+              onChange={handleCaseUserString}
               multiline
               rows={4}
               sx={{ width: "70%" }}
