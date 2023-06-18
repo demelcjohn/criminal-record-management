@@ -1,4 +1,5 @@
 import { Box, Button, Grid, Modal, TextField, Typography } from "@mui/material";
+import axios from "axios";
 import { useState } from "react";
 
 const style = {
@@ -16,7 +17,7 @@ const style = {
 
 export default function AddCaseModal({ open, setOpen, handleClose }: any) {
   const [formData, setFormData] = useState({
-    caseid: "",
+    caseid: 0,
     casetitle: "",
     casediscription: "",
     status: "",
@@ -43,10 +44,30 @@ export default function AddCaseModal({ open, setOpen, handleClose }: any) {
     return arr;
   };
 
-  const handleSubmit = (event: any) => {
+  const handleSubmit = async (event: any) => {
     event.preventDefault();
     formData.case_user = convertArray(caseUserString);
     console.log(formData);
+
+    try {
+      const storedData: any = localStorage.getItem("token");
+      const parsedData = JSON.parse(storedData);
+      const response: any = await axios.post(
+        "https://crm-back-end-jiaa-git-main-jjesvin21.vercel.app/api/cases/cases/",
+        formData,
+        {
+          headers: {
+            tocken: parsedData.tocken,
+            user: parsedData.user,
+            role: "authority",
+          },
+        }
+      );
+      alert("Data inserted");
+      handleClose();
+    } catch (error) {
+      console.error("Error");
+    }
   };
   return (
     <Modal
@@ -65,6 +86,7 @@ export default function AddCaseModal({ open, setOpen, handleClose }: any) {
               onChange={handleChange}
               required
               sx={{ width: "25%" }}
+              type="number"
             />
             <TextField
               name="casetitle"
