@@ -1,11 +1,19 @@
 import AddCaseModal from "@/components/addCaseModal";
 import { Box, Button, Grid, Modal, TextField, Typography } from "@mui/material";
+import axios from "axios";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { QueryClient, QueryClientProvider } from "react-query";
 const queryClient = new QueryClient();
 
 export default function Authority() {
+  const [caseData, setCaseData] = useState({
+    caseid: 0,
+    casetitle: "",
+    casediscription: "",
+    status: "",
+    case_user: [] as string[],
+  });
   const [viewId, setViewId] = useState("");
   const [openModal, setOpenModal] = useState(false);
   const handleOpen = () => setOpenModal(true);
@@ -13,9 +21,29 @@ export default function Authority() {
   const handleChange = (e: any) => {
     setViewId(e.target.value);
   };
-  const handleViewCase = (e: any) => {
-    setOpenModal(true);
+  const handleViewCase = async (event: any) => {
+    event.preventDefault();
+
+    try {
+      const storedData: any = localStorage.getItem("token");
+      const parsedData = JSON.parse(storedData);
+      const response: any = await axios.get(
+        "https://crm-back-end-jiaa-git-main-jjesvin21.vercel.app/api/cases/cases/" +
+          viewId,
+        {
+          headers: {
+            tocken: parsedData.tocken,
+            user: parsedData.user,
+            role: "authority",
+          },
+        }
+      );
+      setCaseData(response.data);
+    } catch (error) {
+      console.error("Error");
+    }
   };
+
   return (
     <QueryClientProvider client={queryClient}>
       <Box
@@ -127,11 +155,11 @@ export default function Authority() {
                   InputProps={{
                     readOnly: true,
                   }}
-                  value=""
                   sx={{
                     width: "90%",
                     bgcolor: "white",
                   }}
+                  value={JSON.stringify(caseData, null, 2)}
                 />
               </Grid>
             </Grid>
