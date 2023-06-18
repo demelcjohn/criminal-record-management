@@ -2,11 +2,14 @@
 
 import { usePersonalData } from "@/hooks/usePersonalData";
 import { Box, Button, Grid, TextField, Typography } from "@mui/material";
+import axios from "axios";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 export default function PersonalDetails() {
   const [name, setName] = useState("John Doe");
   const [identityNumber, setIdentityNumber] = useState("1234567890");
+
+  const [userData, setUserData] = useState();
 
   // const onSuccess = (data: any) => {
   //   console.log("Perform fetching", data);
@@ -27,6 +30,35 @@ export default function PersonalDetails() {
   // if (isLoading || isFetching) {
   //   return <h2>Loading...</h2>;
   // }
+
+  const fetchData = async () => {
+    try {
+      const storedData: any = localStorage.getItem("token");
+      const parsedData = JSON.parse(storedData);
+      const response: any = await axios.get(
+        "https://crm-back-end-jiaa-git-main-jjesvin21.vercel.app/api/citizen/all_citizens/" +
+          parsedData.user,
+        {
+          headers: {
+            tocken: parsedData.tocken,
+            user: parsedData.user,
+            role: "Citizen",
+          },
+        }
+      );
+      console.log(response);
+      console.log(response.data);
+      localStorage.setItem("token", JSON.stringify(response.data));
+    } catch (error) {
+      console.error("Error");
+      alert("Username or Password does not match !!!!");
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
   return (
     <Box
       width="100%"
