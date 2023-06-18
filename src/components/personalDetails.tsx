@@ -122,7 +122,7 @@ export default function PersonalDetails() {
             InputProps={{
               readOnly: true,
             }}
-            value=""
+            value={JSON.stringify(userData, null, 2)}
             sx={{
               width: "100%",
               bgcolor: "white",
