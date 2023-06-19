@@ -38,11 +38,43 @@ export default function Home() {
               </Stack>
             </Grid>
             <Grid container sx={{ width: "100%", height: "65%" }}>
-              <Grid item sx={{ width: "40%", height: "100%" }}></Grid>
               <Grid
                 item
                 p={{ sm: 2, md: 4, lg: 4 }}
-                sx={{ width: "60%", height: "100%" }}
+                sx={{ width: "65%", height: "100%" }}
+              >
+                <Box
+                  p={{ sm: 2, md: 4, lg: 4 }}
+                  sx={{
+                    width: "100%",
+                    height: "100%",
+                    bgcolor: "#000000",
+                    color: "#000000",
+                  }}
+                >
+                  <Box
+                    p={{ sm: 2, md: 4, lg: 4 }}
+                    sx={{
+                      width: "100%",
+                      height: "100%",
+                      bgcolor: "#FFFFFF",
+                    }}
+                  >
+                    <h1>
+                      Criminal record management is a critical aspect of the
+                      justice system, ensuring accurate and secure storage of
+                      individuals' criminal history information. Blockchain
+                      technology offers a promising solution for enhancing the
+                      efficiency, transparency, and security of criminal record
+                      management.
+                    </h1>
+                  </Box>
+                </Box>
+              </Grid>
+              <Grid
+                item
+                p={{ sm: 2, md: 4, lg: 4 }}
+                sx={{ width: "35%", height: "100%" }}
               >
                 <Stack
                   direction="column"
@@ -50,10 +82,11 @@ export default function Home() {
                   justifyContent="center"
                   sx={{ width: "100%", height: "100%" }}
                 >
+                  <h1>Log In...</h1>
                   <Button
                     color="secondary"
                     variant="contained"
-                    sx={{ width: "20%", height: "15%" }}
+                    sx={{ width: "25%", height: "15%" }}
                     onClick={authNavigater}
                   >
                     Authority
@@ -62,7 +95,7 @@ export default function Home() {
                   <Button
                     color="secondary"
                     variant="contained"
-                    sx={{ width: "20%", height: "15%" }}
+                    sx={{ width: "25%", height: "15%" }}
                     onClick={citizenNavigater}
                   >
                     Citizen
