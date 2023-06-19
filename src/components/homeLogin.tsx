@@ -1,13 +1,15 @@
-import { Button, Grid, Stack, TextField, Typography } from "@mui/material";
+import { Button, Grid, Stack, TextField, Typography, Box } from "@mui/material";
 import axios from "axios";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { useState } from "react";
+import BeatLoader from "react-spinners/BeatLoader";
 
 export default function HomeLogin() {
   const router = useRouter();
   const [UID, setUID] = useState("");
   const [Password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const UIDChangeHandler = (e: any) => {
     setUID(e.target.value);
@@ -24,6 +26,7 @@ export default function HomeLogin() {
     };
 
     try {
+      setLoading(true);
       const response: any = await axios.post(
         "https://crm-back-end-jiaa-git-main-jjesvin21.vercel.app/api/citizen/login",
         formData
@@ -35,9 +38,10 @@ export default function HomeLogin() {
       console.error("Error");
       alert("Username or Password does not match !!!!");
     }
+    setLoading(false);
   };
 
-  return (
+  return !loading ? (
     <Grid
       item
       p={{ sm: 2, md: 4, lg: 4 }}
@@ -113,5 +117,14 @@ export default function HomeLogin() {
         </Grid>
       </Grid>
     </Grid>
+  ) : (
+    <Box
+      display="flex"
+      alignItems={"center"}
+      justifyContent={"center"}
+      sx={{ width: "40%", height: "100%", bgcolor: "#000000" }}
+    >
+      <BeatLoader color="#FFFFFF" size={30} />
+    </Box>
   );
 }
