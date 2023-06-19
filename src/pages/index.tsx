@@ -14,7 +14,7 @@ export default function Home() {
           height="100vh"
           sx={{ bgcolor: "#E5ECFF", padding: "7px" }}
         >
-          <HomeCitizen />
+          <Box width="100%" height="100%" sx={{ bgcolor: "#ABC8EA" }}></Box>
         </Box>
       </StyledEngineProvider>
     </StrictMode>
