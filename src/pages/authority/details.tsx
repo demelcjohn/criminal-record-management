@@ -82,27 +82,67 @@ export default function Authority() {
             }}
           >
             <Grid
+              container
               sx={{
                 width: "100%",
                 height: "20%",
                 bgcolor: "#FFF387",
               }}
             >
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "left",
-                  marginBottom: "5px",
+              <Grid
+                sx={{
+                  width: "80%",
+                  height: "100%",
                 }}
               >
-                <Typography>Name :</Typography>
-                <Typography>{" qwerty"}</Typography>
-              </div>
-
-              <div style={{ display: "flex", alignItems: "left" }}>
-                <Typography>Identity Number :</Typography>
-                <Typography>{" identityNumber"}</Typography>
-              </div>
+                <Grid container sx={{ width: "100%", height: "100%" }}>
+                  <Grid
+                    // padding={"3%"}
+                    display="flex"
+                    alignItems="center"
+                    sx={{
+                      width: "100%",
+                      height: "50%",
+                    }}
+                  >
+                    Authority Name: Authority 1
+                  </Grid>
+                  <Grid
+                    // padding={"3%"}
+                    display="flex"
+                    alignItems="center"
+                    sx={{
+                      width: "100%",
+                      height: "50%",
+                    }}
+                  >
+                    Authority Id: 7A645781
+                  </Grid>
+                </Grid>
+              </Grid>
+              <Grid
+                sx={{
+                  width: "20%",
+                  height: "100%",
+                }}
+                display="flex"
+                justifyContent="center"
+                alignItems="center"
+              >
+                <Button
+                  variant="contained"
+                  color="secondary"
+                  sx={{ width: "50%" }}
+                  onClick={handleOpen}
+                >
+                  Add Case
+                </Button>
+                <AddCaseModal
+                  open={openModal}
+                  setOpen={setOpenModal}
+                  handleClose={handleClose}
+                />
+              </Grid>
             </Grid>
             <Grid container sx={{ width: "100%", height: "100%" }}>
               <Grid
@@ -113,19 +153,6 @@ export default function Authority() {
                   padding: "5%",
                 }}
               >
-                <Button
-                  variant="contained"
-                  color="secondary"
-                  sx={{ width: "100%" }}
-                  onClick={handleOpen}
-                >
-                  Add Case
-                </Button>
-                <AddCaseModal
-                  open={openModal}
-                  setOpen={setOpenModal}
-                  handleClose={handleClose}
-                />
                 <TextField
                   sx={{ width: "100%", bgcolor: "white" }}
                   style={{ marginTop: "10%" }}
