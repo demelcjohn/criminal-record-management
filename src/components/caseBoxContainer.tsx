@@ -1,6 +1,7 @@
 import { Box } from "@mui/material";
 import CaseBox from "./casebox";
 import { useCaseBoxData } from "@/hooks/useCaseBoxData";
+import { BeatLoader } from "react-spinners";
 export default function CaseBoxContainer() {
   const onSuccess = (data: any) => {
     console.log("Perform fetching", data);
@@ -13,7 +14,7 @@ export default function CaseBoxContainer() {
     useCaseBoxData(onSuccess, onError);
 
   if (isLoading || isFetching) {
-    return <h2>Loading...</h2>;
+    return <BeatLoader color="#000000" size={30} />;
   }
   return (
     <Box
