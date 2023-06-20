@@ -1,4 +1,5 @@
 import AddCaseModal from "@/components/addCaseModal";
+import CaseList from "@/components/caseList";
 import { Box, Button, Grid, Modal, TextField, Typography } from "@mui/material";
 import axios from "axios";
 import Image from "next/image";
@@ -7,13 +8,8 @@ import { QueryClient, QueryClientProvider } from "react-query";
 const queryClient = new QueryClient();
 
 export default function Authority() {
-  const [caseData, setCaseData] = useState({
-    caseid: 0,
-    casetitle: "",
-    casediscription: "",
-    status: "",
-    case_user: [] as string[],
-  });
+  const [caseIndex, setCaseIndex] = useState(-1);
+  const [caseData, setCaseData] = useState([]);
   const [viewId, setViewId] = useState("");
   const [openModal, setOpenModal] = useState(false);
   const handleOpen = () => setOpenModal(true);
@@ -21,15 +17,12 @@ export default function Authority() {
   const handleChange = (e: any) => {
     setViewId(e.target.value);
   };
-  const handleViewCase = async (event: any) => {
-    event.preventDefault();
-
+  const handleViewCase = async () => {
     try {
       const storedData: any = localStorage.getItem("token");
       const parsedData = JSON.parse(storedData);
       const response: any = await axios.get(
-        "https://crm-back-end-jiaa-git-main-jjesvin21.vercel.app/api/cases/cases/" +
-          viewId,
+        "https://crm-back-end-jiaa-git-main-jjesvin21.vercel.app/api/cases/cases/",
         {
           headers: {
             tocken: parsedData.tocken,
@@ -38,11 +31,17 @@ export default function Authority() {
           },
         }
       );
+
       setCaseData(response.data);
+      console.log(response.data);
     } catch (error) {
       console.error("Error");
     }
   };
+
+  useEffect(() => {
+    handleViewCase();
+  }, []);
 
   return (
     <QueryClientProvider client={queryClient}>
@@ -150,10 +149,10 @@ export default function Authority() {
                 sx={{
                   width: "50%",
                   height: "68%",
-                  padding: "5%",
+                  padding: "2%",
                 }}
               >
-                <TextField
+                {/* <TextField
                   sx={{ width: "100%", bgcolor: "white" }}
                   style={{ marginTop: "10%" }}
                   label="Case Number"
@@ -167,7 +166,27 @@ export default function Authority() {
                   onClick={handleViewCase}
                 >
                   View Case
-                </Button>
+                </Button> */}
+                <Box
+                  sx={{ width: "100%", height: "100%", bgcolor: "#8BE8D7" }}
+                  overflow={"scroll"}
+                >
+                  {caseData &&
+                    caseData.map((cases: any, index: any) => (
+                      // <Button
+                      //   onClick={() => {
+                      //     setCaseIndex(index);
+                      //     console.log(index);
+                      //   }}
+                      // >
+                      <CaseList
+                        caseid={cases.caseNo}
+                        casetitle={cases.caseTitle}
+                        setCaseIndex={setCaseIndex}
+                        index={index}
+                      />
+                    ))}
+                </Box>
               </Grid>
               <Grid
                 item
@@ -186,7 +205,7 @@ export default function Authority() {
                     width: "90%",
                     bgcolor: "white",
                   }}
-                  value={JSON.stringify(caseData, null, 2)}
+                  value={JSON.stringify(caseData[caseIndex], null, 2)}
                 />
               </Grid>
             </Grid>
