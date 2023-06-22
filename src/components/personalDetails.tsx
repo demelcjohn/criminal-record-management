@@ -1,10 +1,11 @@
 // import Demo from "./demo";
 
+import { CasesContext, CasesContextProvider } from "@/context/casesContext";
 import { usePersonalData } from "@/hooks/usePersonalData";
 import { Box, Button, Grid, TextField, Typography } from "@mui/material";
 import axios from "axios";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 export default function PersonalDetails() {
   const [userData, setUserData] = useState({
     _id: "",
@@ -18,7 +19,7 @@ export default function PersonalDetails() {
     myCases: [],
     __v: 0,
   });
-
+  const cases = useContext(CasesContext);
   // const onSuccess = (data: any) => {
   //   console.log("Perform fetching", data);
   // };
@@ -56,6 +57,15 @@ export default function PersonalDetails() {
       );
       setUserData(response.data.data);
       console.log(response.data.data);
+      if (cases) {
+        cases.setCaseIds(response.data.data.myCases);
+      }
+      console.log(
+        "case ids",
+        cases?.caseIds,
+        "other",
+        response.data.data.myCases
+      );
       localStorage.setItem("token", JSON.stringify(response.data));
     } catch (error) {
       console.error("Error");
