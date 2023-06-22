@@ -1,6 +1,5 @@
 import { Box } from "@mui/material";
 import CaseBox from "./casebox";
-import { useCaseBoxData } from "@/hooks/useCaseBoxData";
 import { BeatLoader } from "react-spinners";
 import { CasesContext } from "@/context/casesContext";
 import { useContext } from "react";
