@@ -20,25 +20,6 @@ export default function PersonalDetails() {
     __v: 0,
   });
   const cases = useContext(CasesContext);
-  // const onSuccess = (data: any) => {
-  //   console.log("Perform fetching", data);
-  // };
-  // const onError = (error: any) => {
-  //   console.log("Perform error", error);
-  // };
-
-  // const { isLoading, data, isError, error, isFetching, refetch } =
-  //   usePersonalData(onSuccess, onError);
-
-  // useEffect(() => {
-  //   console.log("Hello personal data");
-  //   setName(data?.name);
-  //   setIdentityNumber(data?.id);
-  // }, [data]);
-
-  // if (isLoading || isFetching) {
-  //   return <h2>Loading...</h2>;
-  // }
 
   const fetchData = async () => {
     try {
