@@ -129,7 +129,7 @@ export default function Home() {
                     <h1>
                       Criminal record management is a critical aspect of the
                       justice system, ensuring accurate and secure storage of
-                      individuals' criminal history information. Blockchain
+                      criminal history information of individuals . Blockchain
                       technology offers a promising solution for enhancing the
                       efficiency, transparency, and security of criminal record
                       management.
