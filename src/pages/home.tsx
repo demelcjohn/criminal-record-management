@@ -1,5 +1,3 @@
-// import Demo from "./demo";
-
 import HomeLogin from "@/components/homeLogin";
 import { Box, Grid } from "@mui/material";
 import { StyledEngineProvider } from "@mui/material/styles";
@@ -9,11 +7,7 @@ export default function HomeCitizen() {
   return (
     <StrictMode>
       <StyledEngineProvider injectFirst>
-        <Box
-          width="100vw"
-          height="100vh"
-          sx={{ bgcolor: "#EDEFF6", padding: "7px" }}
-        >
+        <Box width="100%" height="100%" sx={{ bgcolor: "#EDEFF6" }}>
           <Box width="100%" height="100%" sx={{ bgcolor: "#ABC8EA" }}>
             <Grid
               container
@@ -21,11 +15,20 @@ export default function HomeCitizen() {
               display={"flex"}
               flexDirection={"column"}
             >
-              <Grid
-                item
-                p={{ sm: 2, md: 4, lg: 4 }}
-                sx={{ width: "60%", height: "100%" }}
-              />
+              <Grid item sx={{ width: "60%", height: "100%" }}>
+                <Box
+                  sx={{
+                    backgroundImage: 'url("/justice.jpg")',
+                    backgroundSize: "cover",
+                    backgroundRepeat: "no-repeat",
+                    backgroundPosition: "center",
+                    width: "100%",
+                    height: "100%",
+                  }}
+                >
+                  {/* Your content */}
+                </Box>
+              </Grid>
               <HomeLogin />
             </Grid>
           </Box>

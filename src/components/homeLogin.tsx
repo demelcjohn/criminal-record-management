@@ -54,76 +54,70 @@ export default function HomeLogin() {
         <Image src="/crm.svg" alt="Icon" width={100} height={100} />
         <Image src="/crmtext.svg" alt="Icon" width={250} height={100} />
       </Stack>
+
       <Grid
-        direction={"column"}
+        container
+        padding={"10px"}
         alignItems="center"
         justifyContent="center"
-        sx={{ width: "100%", height: "100%" }}
+        sx={{ height: "10%" }}
       >
+        <Grid item xs={5} sx={{ height: "150%" }}>
+          <Typography sx={{ color: "#FFFFFF" }}>
+            Identification Number
+          </Typography>
+        </Grid>
+        <Grid item xs={7} sx={{ pl: 2, height: "150%" }}>
+          <TextField
+            sx={{
+              width: "100%",
+              marginBottom: "2%",
+              bgcolor: "#FFFFFF",
+            }}
+            size="small"
+            variant="outlined"
+            inputProps={{
+              style: {
+                width: "100%",
+              },
+            }}
+            onChange={UIDChangeHandler}
+          />
+        </Grid>
         <Grid
-          container
-          padding={"10px"}
-          alignItems="center"
-          justifyContent="center"
-          sx={{ height: "10%" }}
+          item
+          xs={5}
+          style={{ alignItems: "center" }}
+          sx={{ height: "150%" }}
         >
-          <Grid item xs={5} sx={{ height: "150%" }}>
-            <Typography sx={{ color: "#FFFFFF" }}>
-              Identification Number
-            </Typography>
-          </Grid>
-          <Grid item xs={7} sx={{ pl: 2, height: "150%" }}>
-            <TextField
-              sx={{
+          <Typography sx={{ color: "#FFFFFF" }}>Password</Typography>
+        </Grid>
+        <Grid item xs={7} sx={{ pl: 2, height: "150%" }}>
+          <TextField
+            type="password"
+            sx={{
+              width: "100%",
+              marginBottom: "2%",
+              bgcolor: "#FFFFFF",
+            }}
+            size="small"
+            variant="outlined"
+            inputProps={{
+              style: {
                 width: "100%",
-                marginBottom: "2%",
-                bgcolor: "#FFFFFF",
-              }}
-              size="small"
-              variant="outlined"
-              inputProps={{
-                style: {
-                  width: "100%",
-                },
-              }}
-              onChange={UIDChangeHandler}
-            />
-          </Grid>
-          <Grid
-            item
-            xs={5}
-            style={{ alignItems: "center" }}
-            sx={{ height: "150%" }}
+              },
+            }}
+            onChange={PasswordChangeHandler}
+          />
+        </Grid>
+        <Grid sx={{ height: "80%", width: "30%" }}>
+          <Button
+            variant="contained"
+            sx={{ width: "100%", height: "100%" }}
+            onClick={submitHandler}
           >
-            <Typography sx={{ color: "#FFFFFF" }}>Password</Typography>
-          </Grid>
-          <Grid item xs={7} sx={{ pl: 2, height: "150%" }}>
-            <TextField
-              type="password"
-              sx={{
-                width: "100%",
-                marginBottom: "2%",
-                bgcolor: "#FFFFFF",
-              }}
-              size="small"
-              variant="outlined"
-              inputProps={{
-                style: {
-                  width: "100%",
-                },
-              }}
-              onChange={PasswordChangeHandler}
-            />
-          </Grid>
-          <Grid sx={{ height: "80%", width: "30%" }}>
-            <Button
-              variant="contained"
-              sx={{ width: "100%", height: "100%" }}
-              onClick={submitHandler}
-            >
-              Submit
-            </Button>
-          </Grid>
+            Submit
+          </Button>
         </Grid>
       </Grid>
     </Grid>
