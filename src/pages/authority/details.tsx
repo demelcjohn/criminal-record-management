@@ -44,14 +44,18 @@ export default function Authority() {
   }, []);
 
   const extractCaseDetails = (userData: any) => {
-    const data = userData;
+    const data: any = userData;
     var keysToRemove = ["__v"];
     keysToRemove.forEach(function (key) {
-      if (data.hasOwnProperty(key)) {
+      if (data && data.hasOwnProperty(key)) {
         delete data[key];
       }
     });
-    return JSON.stringify(userData, null, 2).replace(/[{}"]/g, "");
+    if (data) {
+      return JSON.stringify(data, null, 2).replace(/[{}"]/g, "");
+    }
+
+    return "";
   };
 
   return (
