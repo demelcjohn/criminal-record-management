@@ -41,7 +41,6 @@ export default function HomeCitizen() {
                     fosters a fair and just society based on transparency and
                     trust.
                   </h1>
-                  {/* Your content */}
                 </Box>
               </Grid>
               <HomeLogin />
