@@ -43,6 +43,17 @@ export default function Authority() {
     handleViewCase();
   }, []);
 
+  const extractCaseDetails = (userData: any) => {
+    const data = userData;
+    var keysToRemove = ["__v"];
+    keysToRemove.forEach(function (key) {
+      if (data.hasOwnProperty(key)) {
+        delete data[key];
+      }
+    });
+    return JSON.stringify(userData, null, 2).replace(/[{}"]/g, "");
+  };
+
   return (
     <QueryClientProvider client={queryClient}>
       <Box
@@ -205,7 +216,7 @@ export default function Authority() {
                     width: "90%",
                     bgcolor: "white",
                   }}
-                  value={JSON.stringify(caseData[caseIndex], null, 2)}
+                  value={extractCaseDetails(caseData[caseIndex])}
                 />
               </Grid>
             </Grid>
