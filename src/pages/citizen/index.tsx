@@ -14,7 +14,7 @@ export default function Citizen() {
         <Box
           width="100%"
           height="100vh"
-          sx={{ bgcolor: "#E5ECFF", padding: "7px", overflow: "hidden" }}
+          sx={{ bgcolor: "#EDEFF6", padding: "7px", overflow: "hidden" }}
         >
           <Box sx={{ width: "100%", height: "8%" }}>
             <Grid
@@ -56,7 +56,7 @@ export default function Citizen() {
                   sx={{
                     width: "100%",
                     height: "100%",
-                    bgcolor: "#E5ECFF",
+                    bgcolor: "#EDEFF6",
                   }}
                 >
                   <PersonalDetails />
@@ -72,7 +72,7 @@ export default function Citizen() {
                 }}
               >
                 {" "}
-                <Box sx={{ width: "100%", height: "100%", bgcolor: "#E5ECFF" }}>
+                <Box sx={{ width: "100%", height: "100%", bgcolor: "#EDEFF6" }}>
                   <Box
                     sx={{
                       width: "100%",

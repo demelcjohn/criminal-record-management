@@ -12,7 +12,7 @@ export default function HomeCitizen() {
         <Box
           width="100vw"
           height="100vh"
-          sx={{ bgcolor: "#E5ECFF", padding: "7px" }}
+          sx={{ bgcolor: "#EDEFF6", padding: "7px" }}
         >
           <Box width="100%" height="100%" sx={{ bgcolor: "#ABC8EA" }}>
             <Grid

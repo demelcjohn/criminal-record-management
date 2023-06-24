@@ -42,7 +42,7 @@ export default function AuthorityLogin() {
     <Box
       width="100%"
       height="100vh"
-      sx={{ bgcolor: "#E5ECFF", padding: "7px", overflow: "hidden" }}
+      sx={{ bgcolor: "#EDEFF6", padding: "7px", overflow: "hidden" }}
     >
       <Box
         sx={{

@@ -48,7 +48,7 @@ export default function Authority() {
       <Box
         width="100%"
         height="100vh"
-        sx={{ bgcolor: "#E5ECFF", padding: "7px", overflow: "hidden" }}
+        sx={{ bgcolor: "#EDEFF6", padding: "7px", overflow: "hidden" }}
       >
         <Box sx={{ width: "100%", height: "8%" }}>
           <Grid container width="100%" height="50%" item xs={12} sx={{ mb: 1 }}>
