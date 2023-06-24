@@ -14,7 +14,10 @@ export default function CaseBoxContainer() {
       fontFamily={"sans-serif"}
       overflow={"scroll"}
     >
-      {caseIds && caseIds.map((cases: any) => <CaseBox id={cases.case_id} />)}
+      {caseIds &&
+        caseIds.map((cases: any) => (
+          <CaseBox key={cases.case_id} id={cases.case_id} />
+        ))}
     </Box>
   );
 }

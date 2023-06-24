@@ -195,6 +195,7 @@ export default function Authority() {
                       //   }}
                       // >
                       <CaseList
+                        key={cases.caseNo}
                         caseid={cases.caseNo}
                         casetitle={cases.caseTitle}
                         setCaseIndex={setCaseIndex}
