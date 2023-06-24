@@ -22,7 +22,7 @@ export default function Home() {
           height="100vh"
           sx={{ bgcolor: "#EDEFF6", padding: "7px" }}
         >
-          <Box width="100%" height="100%" sx={{ bgcolor: "#ABC8EA" }}>
+          <Box width="100%" height="100%" sx={{ bgcolor: "#D2D3F7" }}>
             <Grid
               item
               p={{ sm: 2, md: 4, lg: 4 }}
@@ -33,32 +33,98 @@ export default function Home() {
                 alignItems="center"
                 justifyContent="center"
               >
-                <Image src="/crm.svg" alt="Icon" width={75} height={75} />
-                <Image src="/crmtext.svg" alt="Icon" width={200} height={75} />
+                <Image src="/crm.svg" alt="Icon" width={100} height={100} />
+                <Image src="/crmtext.svg" alt="Icon" width={250} height={100} />
               </Stack>
             </Grid>
             <Grid container sx={{ width: "100%", height: "65%" }}>
               <Grid
                 item
                 p={{ sm: 2, md: 4, lg: 4 }}
+                sx={{ width: "35%", height: "100%" }}
+              >
+                <Stack
+                  direction="row"
+                  alignItems="center"
+                  justifyContent="center"
+                  sx={{ width: "100%", height: "20%" }}
+                >
+                  <h1>Empowering Justice </h1>
+                </Stack>
+                <Stack
+                  direction="row"
+                  alignItems="center"
+                  justifyContent="center"
+                  sx={{ width: "100%", height: "10%" }}
+                >
+                  <h3>Shaping a Future Beyond Criminal Records</h3>
+                </Stack>
+                <Stack
+                  direction="row"
+                  alignItems="center"
+                  justifyContent="center"
+                  sx={{ width: "100%", height: "40%" }}
+                >
+                  <Button
+                    color="secondary"
+                    variant="contained"
+                    sx={{
+                      width: "30%",
+                      height: "35%",
+                      backgroundColor: "white",
+                      color: "green",
+                    }}
+                    onClick={authNavigater}
+                  >
+                    Authority
+                  </Button>
+                  <div style={{ padding: "2%" }}></div>
+                  <Button
+                    color="secondary"
+                    variant="contained"
+                    sx={{
+                      width: "30%",
+                      height: "35%",
+                      backgroundColor: "green",
+                    }}
+                    onClick={citizenNavigater}
+                  >
+                    Citizen
+                  </Button>
+                </Stack>
+                <Stack
+                  direction="row"
+                  alignItems="center"
+                  justifyContent="center"
+                  sx={{ width: "100%", height: "30%" }}
+                ></Stack>
+              </Grid>
+              <Grid
+                item
+                p={{ sm: 2, md: 4, lg: 4 }}
                 sx={{ width: "65%", height: "100%" }}
               >
                 <Box
-                  p={{ sm: 2, md: 4, lg: 4 }}
+                  padding=".2%"
                   sx={{
                     width: "100%",
                     height: "100%",
                     bgcolor: "#000000",
                     color: "#000000",
                   }}
+                  borderRadius="10%"
                 >
                   <Box
+                    display={"flex"}
+                    alignItems="center"
+                    justifyContent="center"
                     p={{ sm: 2, md: 4, lg: 4 }}
                     sx={{
                       width: "100%",
                       height: "100%",
-                      bgcolor: "#FFFFFF",
+                      bgcolor: "#AEB6FF",
                     }}
+                    borderRadius="10%"
                   >
                     <h1>
                       Criminal record management is a critical aspect of the
@@ -70,37 +136,6 @@ export default function Home() {
                     </h1>
                   </Box>
                 </Box>
-              </Grid>
-              <Grid
-                item
-                p={{ sm: 2, md: 4, lg: 4 }}
-                sx={{ width: "35%", height: "100%" }}
-              >
-                <Stack
-                  direction="column"
-                  alignItems="center"
-                  justifyContent="center"
-                  sx={{ width: "100%", height: "100%" }}
-                >
-                  <h1>Log In...</h1>
-                  <Button
-                    color="secondary"
-                    variant="contained"
-                    sx={{ width: "25%", height: "15%" }}
-                    onClick={authNavigater}
-                  >
-                    Authority
-                  </Button>
-                  <div style={{ padding: "2%" }}></div>
-                  <Button
-                    color="secondary"
-                    variant="contained"
-                    sx={{ width: "25%", height: "15%" }}
-                    onClick={citizenNavigater}
-                  >
-                    Citizen
-                  </Button>
-                </Stack>
               </Grid>
             </Grid>
           </Box>
