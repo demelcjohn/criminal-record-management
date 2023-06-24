@@ -19,8 +19,8 @@ export default function PersonalDetails() {
     myCases: [],
     __v: 0,
   });
-  const [name, setName] = useState<any>();
-  const [UID, setUID] = useState<any>();
+  const [name, setName] = useState<any>("");
+  const [UID, setUID] = useState<any>("");
   const [userStringData, setUserStringData] = useState<string>("");
   const cases = useContext(CasesContext);
 
@@ -69,6 +69,7 @@ export default function PersonalDetails() {
       "password",
       "user_Role",
       "myCases",
+      "__v",
     ];
     keysToRemove.forEach(function (key) {
       if (data.hasOwnProperty(key)) {
@@ -81,8 +82,7 @@ export default function PersonalDetails() {
   useEffect(() => {
     setName(userData.name);
     setUID(userData.UID);
-    setUserStringData(extractUserDetails(userData));
-    userStringData.replace(/[{}"]/g, "");
+    setUserStringData(extractUserDetails(userData).replace(/[{}"]/g, ""));
   }, [userData]);
 
   return (
