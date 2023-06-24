@@ -124,12 +124,12 @@ export default function PersonalDetails() {
                 marginBottom: "5px",
               }}
             >
-              <Typography>Name:</Typography>
+              <Typography>Name : </Typography>
               <Typography>{name}</Typography>
             </div>
 
             <div style={{ display: "flex", alignItems: "left" }}>
-              <Typography>Identity Number:</Typography>
+              <Typography>Identity Number : </Typography>
               <Typography>{UID}</Typography>
             </div>
           </Grid>
