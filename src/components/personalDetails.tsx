@@ -19,6 +19,9 @@ export default function PersonalDetails() {
     myCases: [],
     __v: 0,
   });
+  const [name, setName] = useState<any>();
+  const [UID, setUID] = useState<any>();
+  const [userStringData, setUserStringData] = useState<string>("");
   const cases = useContext(CasesContext);
 
   const fetchData = async () => {
@@ -57,6 +60,31 @@ export default function PersonalDetails() {
     fetchData();
   }, []);
 
+  const extractUserDetails = (userData: any) => {
+    const data = userData;
+    var keysToRemove = [
+      "_id",
+      "UID",
+      "name",
+      "password",
+      "user_Role",
+      "myCases",
+    ];
+    keysToRemove.forEach(function (key) {
+      if (data.hasOwnProperty(key)) {
+        delete data[key];
+      }
+    });
+    return JSON.stringify(userData, null, 2);
+  };
+
+  useEffect(() => {
+    setName(userData.name);
+    setUID(userData.UID);
+    setUserStringData(extractUserDetails(userData));
+    userStringData.replace(/[{}"]/g, "");
+  }, [userData]);
+
   return (
     <Box
       width="100%"
@@ -68,7 +96,7 @@ export default function PersonalDetails() {
     >
       <Box width="90%" height="90%" sx={{ padding: "5%", overflow: "hidden" }}>
         <Grid container width="100%" height="30%">
-          <Grid
+          {/* <Grid
             item
             width="30%"
             height="100%"
@@ -77,7 +105,7 @@ export default function PersonalDetails() {
             alignItems="center"
           >
             <Image src="/photo.jpg" alt="Icon" width={100} height={100} />
-          </Grid>
+          </Grid> */}
           <Grid
             item
             width="70%"
@@ -97,12 +125,12 @@ export default function PersonalDetails() {
               }}
             >
               <Typography>Name:</Typography>
-              <Typography>{userData.name}</Typography>
+              <Typography>{name}</Typography>
             </div>
 
             <div style={{ display: "flex", alignItems: "left" }}>
               <Typography>Identity Number:</Typography>
-              <Typography>{userData.UID}</Typography>
+              <Typography>{UID}</Typography>
             </div>
           </Grid>
         </Grid>
@@ -113,7 +141,7 @@ export default function PersonalDetails() {
             InputProps={{
               readOnly: true,
             }}
-            value={JSON.stringify(userData, null, 2)}
+            value={userStringData}
             sx={{
               width: "100%",
               bgcolor: "white",
