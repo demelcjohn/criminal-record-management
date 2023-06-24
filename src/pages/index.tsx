@@ -112,7 +112,7 @@ export default function Home() {
                     bgcolor: "#000000",
                     color: "#000000",
                   }}
-                  borderRadius="10%"
+                  borderRadius="30%"
                 >
                   <Box
                     display={"flex"}
@@ -124,7 +124,7 @@ export default function Home() {
                       height: "100%",
                       bgcolor: "#AEB6FF",
                     }}
-                    borderRadius="10%"
+                    borderRadius="30%"
                   >
                     <h1>
                       Criminal record management is a critical aspect of the
