@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
 import CaseBox from "./casebox";
 import { BeatLoader } from "react-spinners";
-import { CasesContext } from "@/context/casesContext";
+import { CasesContext } from "../context/CasesContext";
 import { useContext } from "react";
 export default function CaseBoxContainer() {
   const { caseIds, setCaseIds }: any = useContext(CasesContext);

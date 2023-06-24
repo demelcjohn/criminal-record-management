@@ -1,6 +1,6 @@
 import CaseBoxContainer from "@/components/caseBoxContainer";
 import PersonalDetails from "@/components/personalDetails";
-import { CasesContextProvider } from "@/context/casesContext";
+import { CasesContextProvider } from "../../context/CasesContext";
 import { Box, Button, Grid, TextField, Typography } from "@mui/material";
 import Image from "next/image";
 import React, { useState } from "react";

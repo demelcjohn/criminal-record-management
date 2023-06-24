@@ -1,6 +1,6 @@
 // import Demo from "./demo";
 
-import { CasesContext, CasesContextProvider } from "@/context/casesContext";
+import { CasesContext, CasesContextProvider } from "../context/CasesContext";
 import { usePersonalData } from "@/hooks/usePersonalData";
 import { Box, Button, Grid, TextField, Typography } from "@mui/material";
 import axios from "axios";
