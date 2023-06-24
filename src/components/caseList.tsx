@@ -15,13 +15,13 @@ export default function CaseList({
       }}
     >
       <Box
-        sx={{ bgcolor: "yellow", width: "100%", height: "100%" }}
+        sx={{ bgcolor: "#BD6AFE", width: "100%", height: "100%" }}
         display="flex"
         justifyContent="center"
         alignItems="center"
       >
         <Box
-          sx={{ bgcolor: "yellow", width: "95%", height: "100%" }}
+          sx={{ bgcolor: "#BD6AFE", width: "95%", height: "100%" }}
           display="flex"
           justifyContent="space-between"
           alignItems="center"
