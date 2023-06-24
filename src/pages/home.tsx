@@ -17,6 +17,9 @@ export default function HomeCitizen() {
             >
               <Grid item sx={{ width: "60%", height: "100%" }}>
                 <Box
+                  display={"flex"}
+                  alignItems="center"
+                  justifyContent="center"
                   sx={{
                     backgroundImage: 'url("/justice.jpg")',
                     backgroundSize: "cover",
@@ -24,8 +27,20 @@ export default function HomeCitizen() {
                     backgroundPosition: "center",
                     width: "100%",
                     height: "100%",
+                    color: "white",
+                    textShadow: "2px 2px 4px rgba(0, 0, 1, 2)",
                   }}
+                  padding="10%"
                 >
+                  <h1>
+                    Citizen access to criminal records enables informed
+                    decision-making, promoting transparency and accountability.
+                    It empowers individuals to prioritize personal safety, make
+                    informed choices, and contribute to community security. By
+                    providing reliable information, access to criminal records
+                    fosters a fair and just society based on transparency and
+                    trust.
+                  </h1>
                   {/* Your content */}
                 </Box>
               </Grid>
