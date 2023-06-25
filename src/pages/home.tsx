@@ -28,7 +28,8 @@ export default function HomeCitizen() {
                     width: "100%",
                     height: "100%",
                     color: "white",
-                    textShadow: "2px 2px 4px rgba(0, 0, 1, 2)",
+                    textShadow: "10px 10px 20px rgba(0, 0, 1, 1)",
+                    WebkitTextStroke: "1px black",
                   }}
                   padding="10%"
                 >
