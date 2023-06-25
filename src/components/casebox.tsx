@@ -1,10 +1,8 @@
-// import Demo from "./demo";
-
 import { Box, Button } from "@mui/material";
 import axios from "axios";
 import { useEffect, useState } from "react";
 export default function CaseBox({ id }: any) {
-  const [color, setColor] = useState("blue");
+  const [color, setColor] = useState("#6AB2F5");
 
   const fetchData = async () => {
     try {
@@ -35,10 +33,12 @@ export default function CaseBox({ id }: any) {
   }, []);
 
   useEffect(() => {
-    if (status === "ongoing") {
-      setColor("#EB5E5E");
-    } else if (status === "free") {
-      setColor("#6CE561");
+    if (status === "accused") {
+      setColor("#6AB2F5");
+    } else if (status === "convicted") {
+      setColor("#F55252");
+    } else {
+      setColor("#67F75A");
     }
   }, []);
 
