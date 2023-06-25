@@ -1,8 +1,12 @@
 import { Box, Button } from "@mui/material";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import ViewCaseModal from "./viewCaseModal";
 export default function CaseBox({ id }: any) {
   const [color, setColor] = useState("#6AB2F5");
+  const [openModal, setOpenModal] = useState(false);
+  const handleOpen = () => setOpenModal(true);
+  const handleClose = () => setOpenModal(false);
 
   const fetchData = async () => {
     try {
@@ -62,9 +66,19 @@ export default function CaseBox({ id }: any) {
           alignItems="center"
         >
           {id} {}
-          <Button variant="contained" size="small" color="info">
+          <Button
+            variant="contained"
+            size="small"
+            color="info"
+            onClick={handleOpen}
+          >
             Status
           </Button>
+          <ViewCaseModal
+            open={openModal}
+            setOpen={setOpenModal}
+            handleClose={handleClose}
+          />
         </Box>
       </Box>
     </Box>
