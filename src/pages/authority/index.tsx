@@ -71,7 +71,6 @@ export default function AuthorityLogin() {
             <TextField
               sx={{
                 width: "100%",
-                // "& .MuiInputBase-root": { border: "1px solid black" },
               }}
               label="Username"
               onChange={changeUsername}
@@ -81,7 +80,6 @@ export default function AuthorityLogin() {
             <TextField
               sx={{
                 width: "100%",
-                // "& .MuiInputBase-root": { border: "1px solid black" },
               }}
               label="Password"
               onChange={changePassword}
